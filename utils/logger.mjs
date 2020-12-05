@@ -1,8 +1,10 @@
-import winston from 'winston';
+import winston from 'winston'
 
-const myFormat = winston.format.combine(winston.format.timestamp(),
-                                        winston.format.colorize(),
-                                        winston.format.printf(mess => `[${mess.timestamp}] ${mess.level}: ${mess.message}`));
+const myFormat = winston.format.combine(
+  winston.format.timestamp(),
+  winston.format.colorize(),
+  winston.format.printf(mess => `[${mess.timestamp}] ${mess.level}: ${mess.message}`)
+)
 
 export const error = winston.createLogger({
   transports: [
@@ -12,7 +14,7 @@ export const error = winston.createLogger({
       colorize: true,
     }),
   ],
-});
+})
 
 export const warn = winston.createLogger({
   transports: [
@@ -22,7 +24,7 @@ export const warn = winston.createLogger({
       colorize: true,
     }),
   ],
-});
+})
 
 export const info = winston.createLogger({
   transports: [
@@ -37,7 +39,7 @@ export const info = winston.createLogger({
       colorize: true,
     }),
   ],
-});
+})
 
 export const verbose = winston.createLogger({
   transports: [
@@ -52,7 +54,7 @@ export const verbose = winston.createLogger({
       colorize: true,
     }),
   ],
-});
+})
 
 export const debug = winston.createLogger({
   transports: [
@@ -67,7 +69,7 @@ export const debug = winston.createLogger({
       colorize: true,
     }),
   ],
-});
+})
 
 export default {
   error: log => error.error(log),

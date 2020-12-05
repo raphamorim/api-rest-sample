@@ -1,13 +1,11 @@
 FROM node:14
 
-WORKDIR /usr/src/app
+WORKDIR /
 
-COPY package*.json ./
-
-RUN yarn install
+RUN yarn install --production=true
 
 COPY . .
 
 EXPOSE 8080
 
-CMD [ "node", "app.js" ]
+CMD [ "node", "--experimental-modules", "app.mjs" ]

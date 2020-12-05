@@ -11,9 +11,8 @@
   },
   "license": "MIT",
   "scripts": {
-    "postinstall": "husky install",
     "start": "node ./app.mjs",
-    "start:dev": "nodemon src/index.js",
+    "start:dev": "DEBUG=true nodemon app.mjs",
     "flow": "flow status",
     "test": "jest --coverage",
     "deploy": "yarn audit && yarn test && "
