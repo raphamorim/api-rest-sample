@@ -1,0 +1,31 @@
+{
+  "name": "api-rest-sample",
+  "version": "1.0.0",
+  "description": "API Rest Sample",
+  "main": "index.js",
+  "private": true,
+  "repository": "git@github.com:raphamorim/api-rest-sample.git",
+  "author": "Raphael Amorim <rapha850@gmail.com>",
+  "engines": {
+    "node": ">=14.15.1"
+  },
+  "license": "MIT",
+  "scripts": {
+  	"postinstall": "husky install",
+    "start": "node ./app.js",
+    "start:dev": "nodemon src/index.js",
+    "flow": "flow status",
+    "test": "jest --coverage",
+    "deploy": "yarn audit && yarn test && "
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "flow-bin": "^0.138.0",
+    "jest": "^26.6.3",
+    "nodemon": "^2.0.6",
+    "prettier": "^2.2.1"
+  },
+  "devDependencies": {
+    "husky": "^5.0.4"
+  }
+}
