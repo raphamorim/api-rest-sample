@@ -4,7 +4,7 @@ import routes from './routes/index.mjs'
 import logger from './utils/logger.mjs'
 
 const app = express()
-const port = process.env['API_PORT'] || 3000
+const port = process.env['API_PORT'] || 8080
 
 // Process listeners
 process.on('exit', function() {
