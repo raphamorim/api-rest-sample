@@ -1,9 +1,9 @@
 export default () => {
-  const {THE_MOVIE_DB_API_KEY, PORT, DEVELOPMENT} = process.env;
-  const themoviedb = 'api.themoviedb.org';
+  const {THE_MOVIE_DB_API_KEY, PORT, DEVELOPMENT} = process.env
+  const themoviedb = 'api.themoviedb.org'
   return {
     port: PORT || '8080',
-    debug: DEVELOPMENT || false,
+    isDev: DEVELOPMENT || false,
     services: {
       youtube: {
         baseUrl: 'youtube.com',
@@ -17,4 +17,4 @@ export default () => {
       }
     }, 
   }
-};
+}

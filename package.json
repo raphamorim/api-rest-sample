@@ -13,12 +13,13 @@
   "scripts": {
     "start": "node ./app.mjs",
     "start:dev": "DEVELOPMENT=true nodemon app.mjs",
-    "flow": "flow status",
+    "flow": "flow check",
     "test": "node --experimental-vm-modules node_modules/.bin/jest",
     "lint": "eslint --fix",
     "deploy": "yarn audit && yarn test"
   },
   "dependencies": {
+    "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "winston": "^3.3.3"
   },
@@ -36,7 +37,10 @@
   },
   "jest": {
     "verbose": true,
-    "moduleFileExtensions": ["js", "mjs"],
+    "moduleFileExtensions": [
+      "js",
+      "mjs"
+    ],
     "transform": {
       "^.+\\.mjs$": "babel-jest"
     },

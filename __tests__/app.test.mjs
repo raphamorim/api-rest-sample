@@ -1,5 +1,5 @@
 describe('App', () => {
   test('is defined', () => {
-    expect(true).toBe(true);
-  });
-});
+    expect(true).toBe(true)
+  })
+})
