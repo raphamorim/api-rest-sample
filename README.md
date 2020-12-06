@@ -16,7 +16,14 @@ docker run raphamorim/api-rest-sample
 ## 
 
 ```zsh
-curl -X GET -H "Content-type: application/json"  -H "Accept: application/json" -d '{"url":"http://content.viaplay.se/pc-se/film/fargo-1996"}' "http://localhost:8080/trailer"
+curl -X GET -H "Content-type: application/json"  -H "Accept: application/json" -d '{"url":"https://content.viaplay.se/pc-se/film/bad-boys-for-life-2020"}' "http://localhost:8080/trailer"
+```
+
+```
+[
+  'https://www.youtube.com/watch?v=jKCj3XuPG8M',
+  'https://www.youtube.com/watch?v=-P-C6I-jZwQ'
+]
 ```
 
 ## 

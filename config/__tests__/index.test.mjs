@@ -18,7 +18,7 @@ describe('Config', () => {
   test('themoviedb helper to get URL by movie id', () => {
     const key = 'dummy-key'
     const id = 'dummy-id'
-    process.env.THE_MOVIE_DB_API_KEY = key
+    process.env.THEMOVIEDB_API_KEY = key
     const { services } = config()
     const { themoviedb } = services
     expect(themoviedb.helpers.getURLById(id)).toBe(
