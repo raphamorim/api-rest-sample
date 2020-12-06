@@ -1,0 +1,9 @@
+- [ ] Fix flow for .mjs file format
+- [ ] Node perfomance using https://github.com/mcollina/autocannon
+- [ ] Add more custom errors and dispatch logs when it's initialized
+- [ ] Fix eslint
+- [ ] Validate prettier
+- [ ] Add integration tests
+- [ ] Add README.md setup guide
+- [ ] Unit tests for movie-trailers route to check different status code
+- [ ] Unit tests for logger logic
