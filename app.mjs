@@ -2,14 +2,14 @@
 import express from 'express'
 import routes from './routes/index.mjs'
 import logger from './utils/logger.mjs'
+import config from './config/index.mjs'
 
 const app = express()
 const router = express.Router()
-const port = process.env['API_PORT'] || 8080
-const isDebug = process.env['DEBUG'] || false;
+const { isDev, port } = config();
 
 router.use((req, res, next) => {
-  isDebug && logger.debug(req.originalUrl)
+  isDev && logger.debug(req.originalUrl)
   next()
 })
 
