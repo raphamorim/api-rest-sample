@@ -1,6 +1,6 @@
 // @flow
 import health from './health.mjs'
-import movieTrailer from './movieTrailer.mjs'
+import movieTrailer from './movie-trailers.mjs'
 
 export default {
   health,

@@ -12,7 +12,7 @@
   "license": "MIT",
   "scripts": {
     "start": "node ./app.mjs",
-    "start:dev": "THEMOVIEDB_API_KEY=8c6648b2bbb0c79866e0fb4c789b5422 DEVELOPMENT=true nodemon app.mjs",
+    "start:dev": "DEVELOPMENT=true nodemon app.mjs",
     "flow": "flow check",
     "test": "node --experimental-vm-modules node_modules/.bin/jest",
     "lint": "eslint --fix",

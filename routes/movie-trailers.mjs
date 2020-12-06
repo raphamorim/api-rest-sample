@@ -4,7 +4,7 @@ import fetch from 'node-fetch'
 
 import config from '../config/index.mjs'
 import logger from '../utils/logger.mjs'
-import CustomError from '../utils/CustomError.mjs'
+import CustomError from '../utils/custom-error.mjs'
 
 const { isDev, apiKey, services: { themoviedb, youtube } } = config()
 const { helpers: { getURLById } } = themoviedb

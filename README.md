@@ -19,6 +19,8 @@ docker run raphamorim/api-rest-sample
 curl -X GET -H "Content-type: application/json"  -H "Accept: application/json" -d '{"url":"https://content.viaplay.se/pc-se/film/bad-boys-for-life-2020"}' "http://localhost:8080/trailer"
 ```
 
+###### Result
+
 ```
 [
   'https://www.youtube.com/watch?v=jKCj3XuPG8M',
