@@ -16,6 +16,14 @@ $ export THEMOVIEDB_API_KEY=<my-api-key>
 
 ## Installation
 
+### Quick way
+
+This command is the fastest way, it will run all the installation processes to you:
+
+```zsh
+$ bash <(curl -s https://raw.githubusercontent.com/raphamorim/api-sample/main/install.sh)
+```
+
 Docker is optional but recommended, if you don't want to use docker, run the following commmand on project root and skip to [Running section](#Running):
 
 ```zsh
