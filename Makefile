@@ -2,4 +2,4 @@ build:
 	docker build -t raphamorim/api-rest-sample .
 
 run:
-	docker run -it -d -p 8000:8080 raphamorim/api-rest-sample
+	docker run -e THEMOVIEDB_API_KEY -it -d -p 8080:8080 raphamorim/api-rest-sample

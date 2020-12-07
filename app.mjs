@@ -37,7 +37,7 @@ app.use(bodyParser.json())
 // Routes
 app.use('/', router)
 app.use('/health', routes.health)
-app.use('/trailer', routes.movieTrailer)
+app.use('/trailers', routes.movieTrailer)
 
 app.listen(port, () => {
   logger.info(`API is running on port: ${port}!`)

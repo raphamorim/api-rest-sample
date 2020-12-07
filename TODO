@@ -7,3 +7,7 @@
 - [ ] Add README.md setup guide
 - [ ] Unit tests for movie-trailers route to check different status code
 - [ ] Unit tests for logger logic
+- [ ] Profiling requests
+- [ ] NGINX or Load balance on express
+- [ ] SSL Termination
+- [ ] Cache for data [!]
