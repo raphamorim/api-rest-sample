@@ -1,5 +1,4 @@
 // @flow
-import express from 'express'
 import fetch from 'node-fetch'
 
 import config from '../config/index.mjs'
@@ -40,26 +39,26 @@ function getTrailersById(IMDBId) {
 }
 
 function movieTrailerGet(req, res) {
-  res.setHeader('Content-Type', 'text/json')
+  res.setHeader('Content-Type', 'application/json')
 
   const movieURL = req.body.url
   if (!movieURL) {
     if (isDev) {
       logger.debug('movieURL parameter not valid')
     }
-    res.send(400)
+    res.sendStatus(400)
   }
 
   fetch(req.body.url)
-    .then((res) => {
-      if (res.ok) {
-        return res
+    .then((result) => {
+      if (result.ok) {
+        return result
       } else {
-        throw new CustomError(res.statusCode)
+        throw new CustomError(result.statusCode)
       }
     })
     .catch((e) => {
-      return res.send(500)
+      return res.sendStatus(500)
     })
     .then((res) => res.json())
     .then((body) => {
@@ -68,7 +67,7 @@ function movieTrailerGet(req, res) {
         if (isDev) {
           logger.debug('IMDB Id not found')
         }
-        res.send(404)
+        res.sendStatus(404)
       }
 
       return IMDBId
@@ -79,14 +78,11 @@ function movieTrailerGet(req, res) {
           if (isDev) {
             logger.debug('Trailers not found')
           }
-          res.send(404)
+          res.sendStatus(404)
         }
         res.json(trailers)
       })
     })
 }
 
-const router = express.Router()
-router.get('/*', movieTrailerGet)
-
-export default router
+export default movieTrailerGet

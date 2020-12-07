@@ -1,12 +1,12 @@
 import { jest } from '@jest/globals'
 import healthRoute from '../health.mjs'
 
-const response = {
-  send: jest.fn(),
-}
-
-describe('Health route', () => {
+describe('/health', () => {
   test('should be called one time with RUNNING as content', () => {
+    const response = {
+      send: jest.fn(),
+    }
+
     expect(healthRoute).toBeDefined()
 
     healthRoute({}, response)
