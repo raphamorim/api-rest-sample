@@ -6,15 +6,25 @@ import config from '../config/index.mjs'
 import logger from '../utils/logger.mjs'
 import CustomError from '../utils/custom-error.mjs'
 
-const { isDev, apiKey, services: { themoviedb, youtube } } = config()
-const { helpers: { getURLById } } = themoviedb
-const { helpers: { setURL } } = youtube
+const {
+  isDev,
+  apiKey,
+  services: { themoviedb, youtube },
+} = config()
+const {
+  helpers: { getURLById },
+} = themoviedb
+const {
+  helpers: { setURL },
+} = youtube
 
 function getIMDBId(resBody) {
   let data = null
   try {
-    data = resBody._embedded['viaplay:blocks'][0]._embedded['viaplay:product'].content.imdb.id
-  } catch(e) {}
+    data =
+      resBody._embedded['viaplay:blocks'][0]._embedded['viaplay:product']
+        .content.imdb.id
+  } catch (e) {}
 
   return data
 }
@@ -22,9 +32,9 @@ function getIMDBId(resBody) {
 function getTrailersById(IMDBId) {
   const url = getURLById(IMDBId)
   return fetch(url)
-    .then(res => res.json())
-    .then(body => {
-      const trailers = body.results.map((item) => (setURL(item.key)))
+    .then((res) => res.json())
+    .then((body) => {
+      const trailers = body.results.map((item) => setURL(item.key))
       return trailers
     })
 }
@@ -41,7 +51,7 @@ function movieTrailerGet(req, res) {
   }
 
   fetch(req.body.url)
-    .then(res => {
+    .then((res) => {
       if (res.ok) {
         return res
       } else {
@@ -51,9 +61,9 @@ function movieTrailerGet(req, res) {
     .catch((e) => {
       return res.send(500)
     })
-    .then(res => res.json())
-    .then(body => {
-      const IMDBId = getIMDBId(body) 
+    .then((res) => res.json())
+    .then((body) => {
+      const IMDBId = getIMDBId(body)
       if (!IMDBId) {
         if (isDev) {
           logger.debug('IMDB Id not found')
@@ -63,8 +73,8 @@ function movieTrailerGet(req, res) {
 
       return IMDBId
     })
-    .then(IMDBId => {
-      return getTrailersById(IMDBId).then(trailers => {
+    .then((IMDBId) => {
+      return getTrailersById(IMDBId).then((trailers) => {
         if (!trailers) {
           if (isDev) {
             logger.debug('Trailers not found')

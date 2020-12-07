@@ -3,7 +3,7 @@
 ## Requirements
 
 - Node.js v14 (this project use ESM feature and can not run without node `13`, `14` or `15`)
-	- More details: https://nodejs.org/docs/latest-v14.x/api/esm.html
+  - More details: https://nodejs.org/docs/latest-v14.x/api/esm.html
 - Yarn (https://yarnpkg.com/lang/en/docs/cli/install/)
 - Docker (optional but strongly recommended), [install guide](https://docs.docker.com/get-docker/)
 - curl (optional but recommended since it's used in this doc to check routes), [install guide](https://curl.haxx.se/download.html)

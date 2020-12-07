@@ -4,5 +4,5 @@ import movieTrailer from './movie-trailers.mjs'
 
 export default {
   health,
-  movieTrailer
+  movieTrailer,
 }

@@ -16,7 +16,7 @@ router.use((req, res, next) => {
 })
 
 // Process listeners
-process.on('exit', function() {
+process.on('exit', function () {
   logger.debug('Server process is finished.')
 })
 
@@ -30,7 +30,7 @@ app.disable('x-powered-by')
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
- 
+
 // parse application/json
 app.use(bodyParser.json())
 

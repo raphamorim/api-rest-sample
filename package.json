@@ -13,6 +13,7 @@
   "scripts": {
     "start": "node ./app.mjs",
     "start:dev": "DEVELOPMENT=true nodemon app.mjs",
+    "format": "prettier --write .",
     "flow": "flow check",
     "test": "node --experimental-vm-modules node_modules/.bin/jest",
     "lint": "eslint --fix",

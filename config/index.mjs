@@ -1,5 +1,5 @@
 export default () => {
-  const {THEMOVIEDB_API_KEY, PORT, DEVELOPMENT} = process.env
+  const { THEMOVIEDB_API_KEY, PORT, DEVELOPMENT } = process.env
   const themoviedb = 'api.themoviedb.org'
   const youtube = 'youtube.com'
   return {
@@ -10,16 +10,16 @@ export default () => {
       youtube: {
         baseUrl: youtube,
         helpers: {
-          setURL: id => `https://www.${youtube}/watch?v=${id}`
-        }
+          setURL: (id) => `https://www.${youtube}/watch?v=${id}`,
+        },
       },
       themoviedb: {
         baseUrl: themoviedb,
         helpers: {
-          getURLById: id =>
+          getURLById: (id) =>
             `http://${themoviedb}/3/movie/${id}/videos?api_key=${THEMOVIEDB_API_KEY}`,
-        }
-      }
-    }, 
+        },
+      },
+    },
   }
 }
