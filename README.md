@@ -53,7 +53,7 @@ The API have 2 routes: `/health` and `/trailers`
 $ curl -X GET -H "Content-type: application/json"  -H "Accept: application/json" -d '{"url":"https://content.viaplay.se/pc-se/film/bad-boys-for-life-2020"}' "http://localhost:8080/health"
 ```
 
-####### Result
+###### Result
 
 ```
 RUNNING
@@ -65,17 +65,11 @@ RUNNING
 $ curl -X GET -H "Content-type: application/json"  -H "Accept: application/json" -d '{"url":"https://content.viaplay.se/pc-se/film/bad-boys-for-life-2020"}' "http://localhost:8080/trailers"
 ```
 
-####### Result
+###### Result
 
 ```
 [
   'https://www.youtube.com/watch?v=jKCj3XuPG8M',
   'https://www.youtube.com/watch?v=-P-C6I-jZwQ'
 ]
-```
-
-## This project is using husky for commit 
-
-```zsh
-husky install
 ```
