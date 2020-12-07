@@ -24,10 +24,18 @@ This command is the fastest way, it will run all the installation processes to y
 $ bash <(curl -s https://raw.githubusercontent.com/raphamorim/api-sample/main/install.sh)
 ```
 
+### Regular way
+
+Install dependencies:
+
+```zsh
+$ yarn
+```
+
 Docker is optional but recommended, if you don't want to use docker, run the following commmand on project root and skip to [Running section](#Running):
 
 ```zsh
-$ yarn && yarn start
+$ yarn start
 ```
 
 Using [docker](https://docs.docker.com/), run the following commands to build and run the API:
